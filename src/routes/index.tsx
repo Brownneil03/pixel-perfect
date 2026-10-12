@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroPrint from "@/assets/rkprint-stationery.jpg";
+import heroPrint from "@/assets/rkprint-outdoor.jpg";
 import largeFormat from "@/assets/rkprint-signage.jpg";
 import photoAlbum from "@/assets/photo-album.jpg";
 import idPhoto from "@/assets/id-photo.jpg";
@@ -49,7 +49,7 @@ function Home() {
         </div>
         <div className="relative md:col-span-5">
           <div className="crop text-foreground">
-            <img src={heroPrint} alt="Simulation de papeterie RKPRINT : cartes de visite, dépliant, affiche et sacs personnalisés" width={1536} height={1024} className="aspect-[3/2] w-full rounded-sm object-contain" />
+            <img src={heroPrint} alt="Simulation d’un grand panneau publicitaire RKPRINT et d’une affiche urbaine au Maroc" width={1536} height={1024} className="aspect-[3/2] w-full rounded-sm object-contain" />
           </div>
           <div className="absolute -bottom-6 -left-4 flex gap-1.5 rounded-full bg-card px-4 py-3 shadow-lg">
             {["bg-cyan", "bg-magenta", "bg-yellow", "bg-ink"].map((c) => (
