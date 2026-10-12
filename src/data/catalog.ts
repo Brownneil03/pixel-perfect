@@ -4,6 +4,7 @@ import heroPrint from "@/assets/rkprint-stationery.jpg";
 import largeFormat from "@/assets/rkprint-signage.jpg";
 import packaging from "@/assets/rkprint-packaging.jpg";
 import outdoor from "@/assets/rkprint-outdoor.jpg";
+import studioHero from "@/assets/rkprint-hero-studio.jpg";
 import wedding from "@/assets/wedding.jpg";
 import photoAlbum from "@/assets/photo-album.jpg";
 import soutenance from "@/assets/soutenance.jpg";
@@ -259,6 +260,17 @@ export const categories: Category[] = [
     ],
   },
 ];
+
+export const homeHero = {
+  image: studioHero,
+  alt: "Collection illustrative RKPRINT : panneau publicitaire, roll-up, sacs, emballages, cartes, dépliant, faire-part et album photo",
+  brand: "RK’s Print",
+  signature: "Conception • Impression • Création — Maroc",
+  slogan: "Votre idée, notre création.",
+  description: "Cartes & flyers, panneaux & roll-ups, packaging, faire-part et albums photo. Du design à l’impression, vos idées prennent forme.",
+  contactLabel: "Discuter de mon projet",
+  catalogueLabel: "Voir nos produits",
+};
 
 export const brandShowcase = {
   title: "RKPRINT, sur tous vos supports.",

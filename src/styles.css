@@ -37,6 +37,7 @@
   --color-cyan: var(--cyan);
   --color-magenta: var(--magenta);
   --color-yellow: var(--yellow);
+  --color-hero-surface: var(--hero-surface);
 }
 
 :root {
@@ -66,6 +67,7 @@
   --cyan: oklch(0.72 0.13 220);
   --magenta: oklch(0.6 0.22 350);
   --yellow: oklch(0.88 0.17 95);
+  --hero-surface: oklch(0.255 0.008 240);
 }
 
 @layer base {
