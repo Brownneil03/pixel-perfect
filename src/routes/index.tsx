@@ -27,14 +27,14 @@ function Home() {
     <>
       {/* Hero */}
       <section className="relative isolate overflow-hidden bg-hero-surface text-ink-foreground">
-        <img src={homeHero.image} alt={homeHero.alt} width={1920} height={1024} fetchPriority="high" className="absolute inset-x-0 bottom-0 -z-10 h-[300px] w-full object-cover object-right md:inset-0 md:h-full md:object-center" />
-        <div className="mx-auto flex max-w-7xl items-center px-5 pb-[330px] pt-10 md:min-h-[550px] md:px-8 md:py-14 lg:min-h-[620px]">
+        <img src={homeHero.image} alt={homeHero.alt} width={1920} height={1024} fetchPriority="high" className="absolute inset-x-0 bottom-0 -z-10 h-[240px] w-full object-cover object-right md:inset-0 md:h-full md:object-center" />
+        <div className="mx-auto flex max-w-7xl items-center px-5 pb-[265px] pt-7 md:min-h-[550px] md:px-8 md:py-14 lg:min-h-[620px]">
           <div className="max-w-md md:w-[43%] lg:max-w-lg">
             <p className="spec text-ink-foreground/75">{homeHero.signature}</p>
-            <h1 className="rise mt-6 text-6xl font-medium leading-none lg:text-7xl">{homeHero.brand}</h1>
-            <p className="rise mt-5 font-display text-4xl italic leading-tight lg:text-5xl">{homeHero.slogan}</p>
-            <p className="rise mt-6 max-w-sm text-base leading-relaxed text-ink-foreground/80 [animation-delay:150ms]">{homeHero.description}</p>
-            <div className="rise mt-8 flex flex-wrap gap-3 [animation-delay:250ms]">
+            <h1 className="rise mt-5 text-5xl font-medium leading-none md:mt-6 md:text-6xl lg:text-7xl">{homeHero.brand}</h1>
+            <p className="rise mt-4 font-display text-3xl italic leading-tight md:mt-5 md:text-4xl lg:text-5xl">{homeHero.slogan}</p>
+            <p className="rise mt-4 max-w-sm text-base leading-relaxed text-ink-foreground/80 [animation-delay:150ms] md:mt-6">{homeHero.description}</p>
+            <div className="rise mt-5 flex flex-wrap gap-3 [animation-delay:250ms] md:mt-8">
               <Cta href={waLink("Bonjour RK’s Print, je souhaite discuter de mon projet.")}>{homeHero.contactLabel}</Cta>
               <Link to="/catalogue" className={ctaVariants({ variant: "ghostLight" })}>{homeHero.catalogueLabel} <span aria-hidden>↗</span></Link>
             </div>
