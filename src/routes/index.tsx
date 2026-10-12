@@ -1,10 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroPrint from "@/assets/rkprint-outdoor.jpg";
 import largeFormat from "@/assets/rkprint-signage.jpg";
 import photoAlbum from "@/assets/photo-album.jpg";
 import idPhoto from "@/assets/id-photo.jpg";
-import { brandShowcase, categories, packs } from "@/data/catalog";
-import { Cta } from "@/components/site/Cta";
+import { brandShowcase, categories, homeHero, packs } from "@/data/catalog";
+import { Cta, ctaVariants } from "@/components/site/Cta";
 import { waLink } from "@/config/site";
 
 export const Route = createFileRoute("/")({
@@ -27,35 +26,18 @@ function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="mx-auto grid max-w-7xl gap-12 px-5 pb-16 pt-12 md:grid-cols-12 md:px-8 md:pt-20">
-        <div className="md:col-span-7">
-          <p className="spec flex items-center gap-3 text-muted-foreground">
-            <span className="h-2 w-2 rounded-full bg-primary" /> Conception • Impression • Création — Maroc
-          </p>
-          <h1 className="rise mt-8 text-[3.4rem] font-medium leading-[0.92] sm:text-7xl lg:text-[7.5rem]">
-            Votre idée,
-            <br />
-            <span className="italic text-primary">notre</span> création.
-          </h1>
-          <p className="rise mt-8 max-w-xl text-lg text-muted-foreground [animation-delay:150ms]">
-            Design, impression, grand format, packaging, papeterie de mariage et labo photo. Venez avec une idée, un fichier ou une photo — repartez avec un objet réel.
-          </p>
-          <div className="rise mt-10 flex flex-wrap gap-3 [animation-delay:250ms]">
-            <Cta href={waLink("Bonjour RK’s Print, je souhaite discuter de mon projet.")} size="lg">Discuter de mon projet</Cta>
-            <Link to="/catalogue" className="inline-flex items-center rounded-full border border-foreground/80 px-7 py-4 font-semibold transition-colors hover:bg-foreground hover:text-background">
-              Découvrir les produits
-            </Link>
-          </div>
-        </div>
-        <div className="relative md:col-span-5">
-          <div className="crop text-foreground">
-            <img src={heroPrint} alt="Simulation d’un grand panneau publicitaire RKPRINT et d’une affiche urbaine au Maroc" width={1536} height={1024} className="aspect-[3/2] w-full rounded-sm object-contain" />
-          </div>
-          <div className="absolute -bottom-6 -left-4 flex gap-1.5 rounded-full bg-card px-4 py-3 shadow-lg">
-            {["bg-cyan", "bg-magenta", "bg-yellow", "bg-ink"].map((c) => (
-              <span key={c} className={`h-4 w-4 rounded-full ${c}`} />
-            ))}
-            <span className="spec ml-2 self-center">CMJN</span>
+      <section className="relative isolate overflow-hidden bg-hero-surface text-ink-foreground">
+        <img src={homeHero.image} alt={homeHero.alt} width={1920} height={1024} fetchPriority="high" className="absolute inset-x-0 bottom-0 -z-10 h-[300px] w-full object-cover object-right md:inset-0 md:h-full md:object-center" />
+        <div className="mx-auto flex max-w-7xl items-center px-5 pb-[330px] pt-10 md:min-h-[550px] md:px-8 md:py-14 lg:min-h-[620px]">
+          <div className="max-w-md md:w-[43%] lg:max-w-lg">
+            <p className="spec text-ink-foreground/75">{homeHero.signature}</p>
+            <h1 className="rise mt-6 text-6xl font-medium leading-none lg:text-7xl">{homeHero.brand}</h1>
+            <p className="rise mt-5 font-display text-4xl italic leading-tight lg:text-5xl">{homeHero.slogan}</p>
+            <p className="rise mt-6 max-w-sm text-base leading-relaxed text-ink-foreground/80 [animation-delay:150ms]">{homeHero.description}</p>
+            <div className="rise mt-8 flex flex-wrap gap-3 [animation-delay:250ms]">
+              <Cta href={waLink("Bonjour RK’s Print, je souhaite discuter de mon projet.")}>{homeHero.contactLabel}</Cta>
+              <Link to="/catalogue" className={ctaVariants({ variant: "ghostLight" })}>{homeHero.catalogueLabel} <span aria-hidden>↗</span></Link>
+            </div>
           </div>
         </div>
       </section>
