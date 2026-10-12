@@ -13,6 +13,8 @@ export const Route = createFileRoute("/catalogue")({
       { name: "description", content: "Cartes de visite, flyers, mémoires PFE, stickers, bâches, roll-ups, packaging, faire-part et albums. Tout le catalogue RK’s Print." },
       { property: "og:title", content: "Le catalogue RK’s Print" },
       { property: "og:description", content: "Design graphique, impression, grand format, packaging, mariage et albums photo au Maroc." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Catalogue,
@@ -56,7 +58,8 @@ function Catalogue() {
                   <p className="spec text-primary">{c.index} — {c.kicker}</p>
                   <h2 className="mt-4 text-4xl font-medium leading-none md:text-5xl">{c.title}</h2>
                   <p className="mt-4 text-muted-foreground">{c.intro}</p>
-                  <img src={c.image} alt={`Illustration — ${c.title}`} loading="lazy" className="mt-8 aspect-[4/3] w-full rounded-sm object-cover" />
+                  <img src={c.image} alt={`Simulation de produits — ${c.title}`} loading="lazy" className="mt-8 h-auto w-full rounded-sm" />
+                  {c.detailImage && <img src={c.detailImage} alt="Simulation d’affichage urbain et de panneau publicitaire RKPRINT" loading="lazy" width={1536} height={1024} className="mt-4 aspect-[3/2] w-full rounded-sm object-contain" />}
                   <div className="mt-6">
                     <Cta variant="ink" href={waLink(`Bonjour RK’s Print, je souhaite un devis — ${c.title}.`)}>Demander un devis</Cta>
                   </div>

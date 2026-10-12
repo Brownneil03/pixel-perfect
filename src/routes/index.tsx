@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroPrint from "@/assets/hero-print.jpg";
-import largeFormat from "@/assets/large-format.jpg";
+import heroPrint from "@/assets/rkprint-stationery.jpg";
+import largeFormat from "@/assets/rkprint-signage.jpg";
 import photoAlbum from "@/assets/photo-album.jpg";
 import idPhoto from "@/assets/id-photo.jpg";
-import { categories, packs } from "@/data/catalog";
+import { brandShowcase, categories, packs } from "@/data/catalog";
 import { Cta } from "@/components/site/Cta";
 import { waLink } from "@/config/site";
 
@@ -14,6 +14,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Design graphique, impression, grand format, packaging, mariage et labo photo au Maroc. Devis rapide sur WhatsApp." },
       { property: "og:title", content: "RK’s Print — Votre idée, notre création" },
       { property: "og:description", content: "Conception • Impression • Création. De l’idée au produit fini, au Maroc." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,
@@ -47,7 +49,7 @@ function Home() {
         </div>
         <div className="relative md:col-span-5">
           <div className="crop text-foreground">
-            <img src={heroPrint} alt="Illustration de supports imprimés : cartes, dépliant, sacs, stickers" width={1600} height={1104} className="aspect-[4/5] w-full rounded-sm object-cover" />
+            <img src={heroPrint} alt="Simulation de papeterie RKPRINT : cartes de visite, dépliant, affiche et sacs personnalisés" width={1536} height={1024} className="aspect-[3/2] w-full rounded-sm object-contain" />
           </div>
           <div className="absolute -bottom-6 -left-4 flex gap-1.5 rounded-full bg-card px-4 py-3 shadow-lg">
             {["bg-cyan", "bg-magenta", "bg-yellow", "bg-ink"].map((c) => (
@@ -68,6 +70,21 @@ function Home() {
           ))}
         </div>
       </div>
+
+      <section className="mx-auto max-w-7xl px-5 pt-20 md:px-8">
+        <h2 className="text-4xl font-medium leading-tight md:text-6xl">{brandShowcase.title}</h2>
+        <div className="mt-10 grid gap-8 md:grid-cols-3">
+          {brandShowcase.items.map((item) => (
+            <figure key={item.title} className="min-w-0">
+              <img src={item.image} alt={item.alt} loading="lazy" width={1536} height={1024} className="aspect-[3/2] w-full rounded-sm object-contain" />
+              <figcaption className="mt-5 border-t border-border pt-4">
+                <p className="spec text-primary">{item.label}</p>
+                <h3 className="mt-2 text-2xl leading-tight">{item.title}</h3>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
 
       {/* Index of activities */}
       <section className="mx-auto max-w-7xl px-5 py-24 md:px-8">
@@ -171,12 +188,13 @@ function Home() {
                 key={p.id}
                 to="/packs"
                 hash={p.id}
-                className="group flex min-h-56 flex-col justify-between bg-background p-7 transition-colors hover:bg-ink hover:text-ink-foreground"
+                className="group flex min-h-56 flex-col justify-between gap-5 bg-background p-7 transition-colors hover:bg-ink hover:text-ink-foreground"
               >
                 <div className="flex items-start justify-between">
                   <span className="spec text-primary">Pack {p.number}</span>
                   <span className="text-xl transition-transform group-hover:-rotate-45">→</span>
                 </div>
+                {p.image && <img src={p.image} alt={`Simulation de produits du pack ${p.name}`} loading="lazy" width={1200} height={900} className="aspect-[4/3] w-full rounded-sm object-cover" />}
                 <div>
                   <h3 className="text-3xl font-medium">{p.name}</h3>
                   <p className="mt-2 text-sm opacity-70">{p.pitch}</p>
