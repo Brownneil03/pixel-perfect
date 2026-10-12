@@ -1,8 +1,9 @@
 // Structured content, ready to be served later by an admin-managed backend.
 // Texts are French (primary locale); keep keys stable for future en/ar translations.
-import heroPrint from "@/assets/hero-print.jpg";
-import largeFormat from "@/assets/large-format.jpg";
-import packaging from "@/assets/packaging.jpg";
+import heroPrint from "@/assets/rkprint-stationery.jpg";
+import largeFormat from "@/assets/rkprint-signage.jpg";
+import packaging from "@/assets/rkprint-packaging.jpg";
+import outdoor from "@/assets/rkprint-outdoor.jpg";
 import wedding from "@/assets/wedding.jpg";
 import photoAlbum from "@/assets/photo-album.jpg";
 import soutenance from "@/assets/soutenance.jpg";
@@ -15,6 +16,7 @@ export type Category = {
   kicker: string;
   intro: string;
   image: string;
+  detailImage?: string;
   groups: Group[];
 };
 
@@ -126,6 +128,7 @@ export const categories: Category[] = [
     intro:
       "Bâches, roll-ups, panneaux, vitrines, véhicules : votre message à l’échelle de la rue.",
     image: largeFormat,
+    detailImage: outdoor,
     groups: [
       {
         title: "Impression grand format",
@@ -256,6 +259,15 @@ export const categories: Category[] = [
     ],
   },
 ];
+
+export const brandShowcase = {
+  title: "RKPRINT, sur tous vos supports.",
+  items: [
+    { image: heroPrint, title: "Une identité qui se remarque", label: "Cartes · Flyers · Papeterie", alt: "Simulation RKPRINT sur des cartes de visite, un dépliant et une affiche" },
+    { image: packaging, title: "Votre marque, jusque dans les détails", label: "Sacs · Boîtes · Étiquettes", alt: "Simulation de sacs, boîtes et stickers personnalisés RKPRINT" },
+    { image: outdoor, title: "Une présence à grande échelle", label: "Panneaux · Affichage · Signalétique", alt: "Simulation d’un panneau publicitaire et d’un affichage urbain RKPRINT" },
+  ],
+};
 
 export const photoLab = {
   identity: [

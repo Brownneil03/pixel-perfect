@@ -10,6 +10,8 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Contactez RK’s Print sur WhatsApp, par téléphone, e-mail ou Instagram pour un devis de design, impression ou photo." },
       { property: "og:title", content: "Contactez RK’s Print" },
       { property: "og:description", content: "Un projet ? Écrivez-nous sur WhatsApp pour discuter formats, quantités et prix." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Contact,

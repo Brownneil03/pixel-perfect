@@ -13,6 +13,8 @@ export const Route = createFileRoute("/packs")({
       { name: "description", content: "Six packs flexibles : Soutenance, Mariage, Entreprise, Petite entreprise, Photo & souvenirs et Sur-mesure. Composez le vôtre." },
       { property: "og:title", content: "Les packs RK’s Print" },
       { property: "og:description", content: "Choisissez uniquement les produits dont vous avez besoin, puis envoyez votre pack sur WhatsApp." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Packs,
@@ -39,7 +41,7 @@ function PackCard({ pack, flip }: { pack: Pack; flip: boolean }) {
           <h2 className="mt-4 text-5xl font-medium leading-none md:text-7xl">{pack.name}</h2>
           <p className="mt-4 text-lg text-muted-foreground">{pack.pitch}</p>
           {pack.image ? (
-            <img src={pack.image} alt={`Illustration — pack ${pack.name}`} loading="lazy" className="mt-8 aspect-[4/3] w-full rounded-sm object-cover" />
+            <img src={pack.image} alt={`Simulation de produits — pack ${pack.name}`} loading="lazy" className="mt-8 h-auto w-full rounded-sm" />
           ) : (
             <div className="paper-grain crop mt-8 grid aspect-[4/3] place-items-center rounded-sm border border-dashed border-foreground/40 p-8 text-center">
               <p className="font-display text-3xl italic">Votre projet est unique.<br /><span className="text-primary">Votre pack aussi.</span></p>

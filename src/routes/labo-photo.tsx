@@ -14,6 +14,8 @@ export const Route = createFileRoute("/labo-photo")({
       { name: "description", content: "Photos d’identité, passeport et visa, tirages, agrandissements, albums de mariage et collections Best Of au Maroc." },
       { property: "og:title", content: "Labo Photo & Souvenirs — RK’s Print" },
       { property: "og:description", content: "Photos d’identité, tirages, albums et Best Of : vos souvenirs, imprimés avec soin." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Labo,
