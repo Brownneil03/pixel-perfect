@@ -12,8 +12,9 @@ const nav = [
 
 export function Logo() {
   return (
-    <Link to="/" className="flex items-baseline gap-1.5 font-display text-2xl font-semibold tracking-tight">
-      RK’s<span className="italic text-primary">Print</span>
+    <Link to="/" className="flex items-center gap-2.5 font-display text-2xl font-semibold tracking-tight">
+      <img src="/logo.png" alt="RK's Print Logo" className="h-8 w-8 rounded-full object-contain shadow-xs" />
+      <span>RK’s<span className="italic text-primary">Print</span></span>
     </Link>
   );
 }
@@ -83,7 +84,10 @@ export function Footer() {
         </p>
         <div className="mt-14 grid gap-10 border-t border-ink-foreground/15 pt-10 md:grid-cols-4">
           <div>
-            <p className="font-display text-2xl">RK’s <span className="italic text-primary">Print</span></p>
+            <div className="flex items-center gap-2.5">
+              <img src="/logo.png" alt="RK's Print" className="h-8 w-8 rounded-full object-contain bg-white/10 p-0.5" />
+              <p className="font-display text-2xl">RK’s <span className="italic text-primary">Print</span></p>
+            </div>
             <p className="spec mt-3 text-ink-foreground/60">{site.signature.join(" • ")}</p>
             <p className="mt-3 text-sm text-ink-foreground/60">Maroc</p>
           </div>
